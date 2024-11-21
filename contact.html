@@ -14,6 +14,12 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
   <!-- Place favicon.ico in the root directory -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script src="assets/js/mailactivator.js" type="text/javascript">
+    
+  </script>
+  <script src="assets/js/mail.js"></script>
 
   <!-- CSS here -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -217,9 +223,18 @@
                     <div class="common-button-groups">
 
                       <a class="btn btn-call"
-                        href="https://drive.google.com/file/d/1FhqbdQktu9poHou3SHcUNo4FHI4RwV5F/view"
-                        target="_blank">
-                        <svg width="25" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15M21 15C21 17.8284 21 19.2426 20.1213 20.1213C19.8215 20.4211 19.4594 20.6186 19 20.7487" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        href="https://drive.google.com/file/d/1FhqbdQktu9poHou3SHcUNo4FHI4RwV5F/view" target="_blank">
+                        <svg width="25" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="#ffffff" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path
+                              d="M15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15M21 15C21 17.8284 21 19.2426 20.1213 20.1213C19.8215 20.4211 19.4594 20.6186 19 20.7487"
+                              stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                        </svg>
                         Resume
                       </a>
                       <button class="btn btn-copy" data-clipboard-text="sharmasatyarth04@gmail.com">
@@ -266,50 +281,50 @@
                   <div class="contact-area">
                     <div class="leave-comments-area">
                       <div class="comments-box">
-                        <form id="contact-form" action="assets/mail.php" method="POST">
+                        <form id="contact-form" >
                           <div class="row gx-3">
                             <div class="col-md-6">
                               <div class="mb-4">
                                 <label class="form-label">Name</label>
-                                <input name="name" required type="text" class="form-control shadow-none"
+                                <input name="name" id="fname" required type="text" class="form-control shadow-none"
                                   placeholder="Enter your name">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <div class="mb-4">
                                 <label class="form-label">Email</label>
-                                <input name="email" required type="email" class="form-control shadow-none"
+                                <input name="email" id="femail" required type="email" class="form-control shadow-none"
                                   placeholder="Enter your email">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <div class="mb-4">
                                 <label class="form-label">Subject</label>
-                                <input name="subject" required type="text" class="form-control shadow-none"
+                                <input name="subject" id="fsubject" required type="text" class="form-control shadow-none"
                                   placeholder="Subject">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <div class="mb-4">
                                 <label class="form-label">Budget</label>
-                                <select name="budget" required class="form-select shadow-none">
+                                <select name="budget" id="fbudget" required class="form-select shadow-none">
                                   <option disabled selected>Select budget...</option>
-                                  <option value="$5000">$5000</option>
-                                  <option value="$5000 - $1000">$5000 - $10000</option>
-                                  <option value="$10000 - $2000">$10000 - $20000</option>
-                                  <option value="$20000">$20000+</option>
+                                  <option value="$5000">₹5000</option>
+                                  <option value="$5000 - $1000">₹5000 - ₹10000</option>
+                                  <option value="$10000 - $2000">₹10000 - ₹20000</option>
+                                  <option value="$20000">₹20000+</option>
                                 </select>
                               </div>
                             </div>
                             <div class="col-md-12">
                               <div class="mb-4">
                                 <label class="form-label">Comment</label>
-                                <textarea name="message" class="form-control shadow-none" rows="4"
+                                <textarea name="message" id="fcomment" class="form-control shadow-none" rows="4"
                                   placeholder="Type details about your inquiry"></textarea>
                               </div>
                             </div>
                             <div class="col-md-12">
-                              <button class="submit-btn" type="submit">
+                              <button class="submit-btn" onclick="sendmail()" type="submit">
                                 Send Message
                                 <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                   xmlns="http://www.w3.org/2000/svg">
@@ -322,7 +337,7 @@
                             </div>
                           </div>
                         </form>
-                        <p class="ajax-response mb-0"></p>
+                        
                       </div>
                     </div>
                     <div class="contact-map-area">
