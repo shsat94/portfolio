@@ -1093,6 +1093,7 @@ p {
 
 .content-box-card .awards-recognitions {
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .content-box-card .awards-recognitions ul li+li {
@@ -1144,7 +1145,6 @@ p {
 
 .content-box-card .awards-recognitions .awards-item .winner-tag {
 	flex: 0 0 auto;
-	width: 140px;
 }
 
 .content-box-card .awards-recognitions .awards-item .winner-tag .title {
@@ -2575,4 +2575,28 @@ p {
 .dark-theme .portfolio-details-area .prev-and-next-btn .btn:hover {
 	background-color: var(--primary);
 	color: var(--white);
+}
+.content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .35s ease, opacity .25s ease;
+}
+
+li.active .content {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.content-inner {
+    transform: translateY(-10px);
+    transition: transform .35s ease;
+}
+
+li.active .content-inner {
+    transform: translateY(0);
+}
+
+li.active .arrow-up {
+    transform: rotate(180deg);
 }

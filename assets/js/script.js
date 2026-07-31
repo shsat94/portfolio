@@ -97,5 +97,17 @@
 			}
 		},]
 	});
+	document.querySelectorAll(".awards-item").forEach(item => {
+    item.addEventListener("click", () => {
+
+        document.querySelectorAll(".list-unstyled > li").forEach(li => {
+            if (li !== item.closest("li")) {
+                li.classList.remove("active");
+            }
+        });
+
+        item.closest("li").classList.toggle("active");
+    });
+});
 
 })(jQuery);
