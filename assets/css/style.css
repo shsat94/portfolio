@@ -637,6 +637,7 @@ p {
 .work-experiance-card .work-experiance-slider li {
 	display: flex !important;
 	gap: 30px;
+	align-items: center;
 }
 
 .animate-scrollY:hover .work-experiance-slider {
@@ -646,18 +647,22 @@ p {
 
 .work-experiance-card .work-experiance-slider li .date {
 	margin-right: 40px;
+	width: 120px;
+	flex-shrink: 0;
+
 }
 
 .work-experiance-card .work-experiance-slider li .date p {
 	font-size: 14px;
 	font-weight: 500;
 	color: var(--light-black);
+	width: 100%;  
 }
 
 .work-experiance-card .work-experiance-slider li .info {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	flex: 1;
 }
 
 .work-experiance-card .work-experiance-slider li .info .icon {

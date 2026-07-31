@@ -19,6 +19,7 @@
   .work-experiance-card .work-experiance-slider li {
     display: flex !important;
     gap: 5px;
+    align-items: start;
   }
 
   .work-experiance-card .work-experiance-slider li .date {
