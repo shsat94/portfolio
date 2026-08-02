@@ -2576,6 +2576,11 @@ p {
 	background-color: var(--primary);
 	color: var(--white);
 }
+
+.dark-theme .content-inner {
+	color: var(--dark-theme-white);
+}
+
 .content {
     max-height: 0;
     overflow: hidden;
@@ -2584,7 +2589,7 @@ p {
 }
 
 li.active .content {
-    max-height: 500px;
+    max-height: 800px;
     opacity: 1;
 }
 
