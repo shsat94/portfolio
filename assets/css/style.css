@@ -409,7 +409,7 @@ p {
 	background-color: var(--white);
 	box-shadow: 0 1px 2px 0 rgba(26, 31, 44, 0.25);
 	border-radius: 16px;
-	height: 100%;
+
 }
 
 .card-body {
